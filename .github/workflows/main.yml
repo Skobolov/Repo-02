@@ -9,9 +9,17 @@ jobs:
     steps:
     - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-        
-    - name: start test
-      env:
-        SELENIUM_HUB_HOST: 'localhost'
-      run: npm run test
+    - name: Start cit
+      run: npm ci     
     
+
+    - uses: actions/setup-python@v1
+      with:
+       python-version: '3.8'
+       architecture: 'x64'
+    
+    
+    - name: Run tests
+      run: coverage run src/test.py
+    - name: Test with pytest
+      run: python -c "import sys; print(sys.version)"
