@@ -1,18 +1,16 @@
 name: WDIO tests
 
 on: [push]
-      
 
 jobs:
-  tests:
+  start-selenoid:
     runs-on: ubuntu-latest
-    name: Run WDIO tests
+    name: Test SELENOID JOB
     steps:
-    - name: Start Selenoid Server
-    - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-          
-    - run : npm cit  
-    - name: run test
-    - run : npm test
+    - run: npm ci    
+    - name: start selenoid
+      uses: ./
+    - name: is selenoid started?
+      run: curl http://localhost:4444/status
     
