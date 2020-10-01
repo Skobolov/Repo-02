@@ -9,11 +9,12 @@ jobs:
     steps:
     - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
+    - name: Start cit
+      run: npm cit
         
     - name: start test
       env:
-        SELENIUM_HUB_HOST: 'localhost'
-      run: npm cit
-    - run: npm run test
+        SELENIUM_HUB_HOST: 'localhost'  
+      run: npm test
 
     
