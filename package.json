@@ -1,12 +1,6 @@
 {
-    "name": "9-js-ui-wdio-xotabu4",
-    "version": "1.0.0",
-    "private": true,
-    "description": "Demo project for StartIT students",
     "scripts": {
-      "test": "wdio run wdio.conf.js",
-      "report": "allure generate",
-      "repl": "wdio repl chrome"
+      "test": "wdio run wdio.conf.js"      
     },
     "repository": {
       "type": "git",
