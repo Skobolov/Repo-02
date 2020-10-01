@@ -9,8 +9,7 @@ jobs:
     steps:
     - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-    - name: Start CI
-      run : npm ci     
+        
     
 
     - uses: actions/setup-python@v1
