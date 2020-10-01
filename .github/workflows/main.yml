@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v1
         
     - name: start test
+      env:
+        SELENIUM_HUB_HOST: 'localhost'
       run: npm run test
     
