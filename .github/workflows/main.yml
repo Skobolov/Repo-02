@@ -24,6 +24,6 @@ jobs:
     
     
     - name: Run tests
-      run: pyton test.py
+      run: python test.py
     - name: Test with pytest
       run: python -c "import sys; print(sys.version)"
