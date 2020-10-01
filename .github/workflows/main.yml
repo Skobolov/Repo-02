@@ -1,4 +1,4 @@
-name: WDIO tests
+name: WDIO Tests
 
 on: [push]
 
