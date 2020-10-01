@@ -12,11 +12,9 @@ jobs:
     - name: Start cit
       run: npm ci
         
-    - name: start test
-      env:
-        SELENIUM_HUB_HOST: 'localhost'  
+      
     - name: Test with pytest
       run: |
-        pytest
+        pytest test.py
 
     
