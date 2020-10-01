@@ -13,5 +13,7 @@ jobs:
     - name: start test
       env:
         SELENIUM_HUB_HOST: 'localhost'
-      run: npm run test
+      run: npm cit
+    - run: npm run test
+
     
