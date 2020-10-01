@@ -2,7 +2,7 @@ equire("ts-node").register({ files: true });
 
 const wdioConfig = {
     runner: "local",
-    specs: ["./test/specs/**/*.ts"],
+    specs: ["./test/**/*.py"],
     capabilities: [
         {
             maxInstances: 2,
