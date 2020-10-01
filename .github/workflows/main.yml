@@ -1,32 +1,31 @@
-name: WDIO Tests
+name: Regression-Tests
 
 on: [push]
 
 jobs:
   start-selenoid:
     runs-on: ubuntu-latest
-    name: Test SELENOID JOB
+    name: Test_with_Selenoid
     steps:
     - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-    - name: Start cit
-      run: npm ci     
+    - name: Start CI
+      run : npm ci     
     
 
     - uses: actions/setup-python@v1
       with:
        python-version: '3.8'
-       architecture: 'x64'
-    - name: Install dependencies
-      run: |
+       architecture  : 'x64'
+    - name: Install PyTest
+      run : |
        python -m pip install --upgrade pip
        pip install flake8 pytest
     - name: Install Selenium
-      run: |
+      run : |
        python -m pip install selenium
      
     
     - name: Run tests
-      run: python test.py
-    - name: Test with pytest
-      run: python -c "import sys; print(sys.version)"
+      run : python test.py
+  
