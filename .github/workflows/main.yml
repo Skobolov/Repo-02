@@ -2,10 +2,6 @@ name: WDIO tests
 
 on: 
   push:
-    branches-ignore:
-    - '!master' # Push events to branches matching allure-report
-    paths-ignore:
-    - 'docs/**'
 
 jobs:
   tests:
@@ -13,10 +9,10 @@ jobs:
     name: Run WDIO tests
     steps:
     - name: Start Selenoid Server
-      uses: Xotabu4/selenoid-github-action@v1
+    - uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-    - name: Run test
-      env:
-        SELENIUM_HUB_HOST: 'localhost'
-      run: npm cit  
+          
+    - run : npm cit  
+    - name: run test
+    - run : npm test
     
