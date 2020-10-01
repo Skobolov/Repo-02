@@ -23,7 +23,7 @@ jobs:
        pip install flake8 pytest
     
     
-    #- name: Run tests
-     # run: coverage run src/test.py
+    - name: Run tests
+      run: pyton test.py
     - name: Test with pytest
       run: python -c "import sys; print(sys.version)"
