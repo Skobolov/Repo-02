@@ -8,7 +8,7 @@ jobs:
     name: Test SELENOID JOB
     steps:
     - uses: actions/checkout@v1
-    - run: npm ci    
+    - run: npm cit    
     - name: start selenoid
       uses: ./
     - name: is selenoid started?
