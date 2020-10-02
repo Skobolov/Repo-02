@@ -1,0 +1,14 @@
+# allure reports
+allure-report
+allure-results
+
+# Logs
+logs
+*.log
+
+
+# Directory
+drivers/
+.idea/
+__pycache__/
+.pytest_cache/
