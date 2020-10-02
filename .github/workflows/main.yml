@@ -26,5 +26,5 @@ jobs:
      
     
     - name: Run tests
-      run : pytest test
+      run : pytest test.py
   
