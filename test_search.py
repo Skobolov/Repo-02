@@ -38,6 +38,5 @@ class TestPageSearch:
         self.driver.get("https://yahoo.com")
         with allure.step("Делаем скриншот"):
             allure.attach(self.driver.get_screenshot_as_png(), name = "Screenshot", attachment_type=AttachmentType.PNG)
-
         assert self.driver.title == "Yahoo"
 
