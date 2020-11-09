@@ -32,37 +32,37 @@ jobs:
         
         run: |
         pushd allure-python-commons-test
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-python-commons
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-behave
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-nose2
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-pytest
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-pytest-bdd
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
         pushd allure-robotframework
-        python setup.py sdist bdist_wheel
+        python test.py sdist bdist_wheel
         twine upload dist/*
         popd
         
