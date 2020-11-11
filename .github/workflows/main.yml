@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Test_with_Selenoid
     steps:
-    - uses: Xotabu4/selenoid-github-action@v1
+    - name: Start Selenoid Server
+      uses: Xotabu4/selenoid-github-action@v1
     - uses: actions/checkout@v1
-        
-    
-
     - uses: actions/setup-python@v1
       with:
        python-version: '3.8'
