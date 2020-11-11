@@ -30,8 +30,7 @@ jobs:
     - name: Run tests
       run : |
        python test.py
-       py.test --alluredir=%allure_result_folder% ./tests
-       allure serve %allure_result_folder%
+       
       
        
    
