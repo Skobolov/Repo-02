@@ -67,7 +67,9 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.1.0
       if: always()
       with:
-        ACCESS_TOKEN: ${{ secrets.PYPI_PASSWORD }}
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        
         BRANCH: master # The branch the action should deploy to.
         FOLDER: allure-report # The folder the action should deploy.
         TARGET_FOLDER: docs
