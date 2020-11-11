@@ -32,7 +32,7 @@ jobs:
        
     - name: Run tests
       run : |
-       python test.py
+       pytest --alluredir=allure-results
        
     - name: Set up JDK
       uses: actions/setup-java@v1
