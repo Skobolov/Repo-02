@@ -16,7 +16,6 @@ capabilities = {
 }
 
 
-
 class TestPageSearch:
     driver = webdriver.Remote(
         command_executor="http://localhost:4444/wd/hub",
@@ -26,7 +25,7 @@ class TestPageSearch:
     @allure.severity("blocker")
     def test_google_search(self):
         self.driver.get("https://google.com")
-#        with allure.step("Делаем скриншот"):
+#        with allure.step("Делаем скриншот"):s
 #            allure.attach(self.driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
         assert self.driver.title == "Google"
 
