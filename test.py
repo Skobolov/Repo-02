@@ -5,23 +5,11 @@
 import time
 from selenium import webdriver
 
-        
-capabilities = {
-    "browserName": "chrome",
-    "browserVersion": "85.0",
-    "selenoid:options": {
-        "enableVNC": True,
-        "enableVideo": False
-    }
-}
+driver = webdriver.Chrome()
 
-class TestPageSearch:
-    driver = webdriver.Remote(
-        command_executor="http://localhost:4444/wd/hub",
-        desired_capabilities=capabilities)
 
-    driver.get("https://google.com")
-    assert driver.title == "Google"
-    time.sleep(20)
-    driver.quit()
+driver.get("https://google.com")
+assert driver.title == "Google"
+time.sleep(20)
+driver.quit()
 
