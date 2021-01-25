@@ -27,5 +27,5 @@ jobs:
         curl http://localhost:4444/status
     - name: Run tests
       run: |
-        pytest test.py
+        test.py
         continue-on-error: true
