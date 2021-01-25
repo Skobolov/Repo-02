@@ -31,5 +31,5 @@ jobs:
         curl http://localhost:4444/status
     - name: Run tests
       run: |
-        pytest
+        pytest test.py
        
