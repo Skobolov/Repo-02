@@ -31,7 +31,4 @@ class TestPageSearch:
 
     time.sleep(5)
     driver.quit()
-<<<<<<< HEAD
-=======
-    
->>>>>>> 97f2118dbcdf67afb4c1bc095e5201c803518afc
+

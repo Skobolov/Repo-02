@@ -1,82 +1,35 @@
-name: Regression-Tests
+name: Tests
 
 on: [push]
 
 jobs:
-  start-selenoid:
-    runs-on: ubuntu-latest
-    name: Test_with_Selenoid
+  run-tests:
+    runs-on: ubuntu-18.04
     steps:
-    
-    - name: Start Selenoid Server
-      uses: Xotabu4/selenoid-github-action@v1
-    - uses: actions/checkout@v1
-    - uses: actions/setup-python@v2
+    - name: Install Python
+      uses: actions/setup-python@v2
       with:
-       python-version: '3.x'
-       architecture  : 'x64'
-    
-    - name: Install PyTest
-      run : |
-       python -m pip install --upgrade pip
-       pip install flake8 pytest
-    
-    - name: Install Selenium
-      run : |
-       python -m pip install selenium
-       
-    
-    - name: Install Allure
-      run : |
-       pip install allure-pytest
-    
-    - name: Set up JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8 
-    
-    - name: Run tests
-      if: always()
-      run: pytest --alluredir=allure-results
-      continue-on-error: true
-       
-      
-    
-    - name: Get Allure history
+        python-version: '3.x'
+        architecture: 'x64'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install -U pip
+        pip install -U pytest selenium flake8 pylint
+    - name: Check out and download repository
       uses: actions/checkout@v2
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
-    
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
-      if: always()
-        #id: allure-report
-      with:
-        allure_results: allure-results
-          #gh_pages: gh-pages
-          #allure_report: allure-report
-        allure_history: allure-history
-           
-    - uses: actions/upload-artifact@v1
-      if: always()
-      with:
-        name: allure-report
-        path: ./allure-report
-    
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
-       
-      
-       
-   
-     
-     
-      
+
+    - name: Check code
+      run: |
+        flake8 test.py
+        pylint --errors-only test.py
+    - name: Start Selenoid
+      run: |
+        wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
+        chmod +x cm
+        ./cm selenoid start --browsers 'firefox:84.0' --args "-timeout 300s"
+        curl http://localhost:4444/status
+    - name: Run tests
+      run: |
+        pytest test.py
+        continue-on-error: true
