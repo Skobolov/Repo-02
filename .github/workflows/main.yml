@@ -19,10 +19,6 @@ jobs:
     - name: Check out and download repository
       uses: actions/checkout@v2
 
-    - name: Check code
-      run: |
-        flake8 test.py
-        pylint --errors-only test.py
     - name: Start Selenoid
       run: |
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
