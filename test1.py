@@ -1,5 +1,4 @@
 import time
-import pytest
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
@@ -8,11 +7,9 @@ driver = webdriver.Remote(
     desired_capabilities=DesiredCapabilities
 )
 
-
 def test_title():
     driver.get('https://www.google.com/')
     assert "Google" in driver.title
 
-
-time.sleep(20)
+time.sleep(10)
 driver.quit()
