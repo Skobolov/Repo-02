@@ -29,7 +29,19 @@ jobs:
         chmod +x cm
         ./cm selenoid start --args "-timeout 300s"
         curl http://localhost:4444/status
-    - name: Run tests
+    - name: Run test1
       run: |
         pytest test.py
+        continue-on-error: true
+    - name: Run test2
+      run: |
+        pytest test1.py
+        continue-on-error: true
+    - name: Run test3
+      run: |
+        python test.py
+        continue-on-error: true
+    - name: Run test4
+      run: |
+        python test1.py
         continue-on-error: true
