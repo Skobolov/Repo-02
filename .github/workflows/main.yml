@@ -28,7 +28,7 @@ jobs:
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
         chmod +x cm
         ./cm selenoid start --args "-timeout 300s"
-        curl http://localhost:4444/status
+        curl http://0.0.0.0:4444/status
     
     - name: Run test2
       run: |
