@@ -32,4 +32,5 @@ jobs:
     - name: Run tests
       run: |
         pytest test.py
+        pytest test1.py
        
