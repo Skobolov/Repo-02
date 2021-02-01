@@ -6,7 +6,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 def driver():
     driver = webdriver.Remote(
         command_executor='http://localhost:4444/wd/hub',
-        desired_capabilities=DesiredCapabilities.CHROME
+        desired_capabilities=DesiredCapabilities.FIREFOX
         )
     yield driver
     driver.quit()
