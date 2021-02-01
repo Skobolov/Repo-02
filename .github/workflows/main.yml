@@ -22,8 +22,8 @@ jobs:
 
     - name: Check code
       run: |
-        flake8 --exit-zero Tests/test.py
-        pylint --errors-only Tests/test.py
+        flake8 --exit-zero Tests/test_main.py
+        pylint --errors-only Tests/test_main.py
 
     - name: Start Selenoid
       run: |
