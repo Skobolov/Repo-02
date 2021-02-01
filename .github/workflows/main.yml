@@ -29,9 +29,9 @@ jobs:
       run: |
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
         chmod +x cm
-        ./cm selenoid start
+        ./cm selenoid start --browsers --last-versions
         curl http://localhost:4444/status
 
     - name: Run tests
       run: |
-        pytest test.py
+        pytest Tests/test.py
