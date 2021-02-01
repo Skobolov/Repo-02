@@ -34,4 +34,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest Tests/test_main.py
+        pytest -s -v --browser_name=firefox Tests/test_main.py
