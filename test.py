@@ -1,15 +1,10 @@
+link = 'https://www.google.com/'
 
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-import time
-from selenium import webdriver
+def test_title_1(brChrome):
+    brChrome.get(link)
+    assert "Google" in brChrome.title
 
-driver = webdriver.Chrome()
-
-
-driver.get("https://google.com")
-assert driver.title == "Google"
-time.sleep(20)
-driver.quit()
+def test_title_2(brChrome):
+    brChrome.get(link)
+    assert "Gogle" in brChrome.title
 
