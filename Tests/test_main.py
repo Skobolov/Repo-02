@@ -6,4 +6,4 @@ def test_title_1(browser):
 
 def test_title_2(browser):
     browser.get(link)
-    assert "Google" in browser.title
+    assert "Gogle" in browser.title
