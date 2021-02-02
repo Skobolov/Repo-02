@@ -47,7 +47,7 @@ jobs:
         pytest --browser_name=opera Tests/test_main.py
       continue-on-error: true
 
-      - name: Run tests Android
+    - name: Run tests Android
       run: |
         pytest --browser_name=android Tests/test_main.py
       continue-on-error: true
