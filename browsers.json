@@ -1,12 +1,12 @@
 {
 
-  "chrome": {
-    "default": "88.0",
-    "88": {
-      "latest": {
-        "image": "selenoid/chrome:88.0",
-        "port": "4444"
-      }
+"chrome": {
+  "default": "88.0",
+  "versions": {
+    "88.0": {
+      "image": "selenoid/chrome:88.0",
+      "port": "4444"
     }
   }
+}
 }
