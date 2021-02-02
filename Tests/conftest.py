@@ -20,6 +20,16 @@ def browser(request):
         command_executor='http://localhost:4444/wd/hub',
         desired_capabilities=DesiredCapabilities.FIREFOX
         )
+    elif browser_name == "opera":
+        browser = webdriver.Remote(
+        command_executor='http://localhost:4444/wd/hub',
+        desired_capabilities=DesiredCapabilities.OPERA
+        )
+    elif browser_name == "android":
+        browser = webdriver.Remote(
+        command_executor='http://localhost:4444/wd/hub',
+        desired_capabilities=DesiredCapabilities.ANDROID
+        )
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser

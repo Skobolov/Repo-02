@@ -29,15 +29,25 @@ jobs:
       run: |
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
         chmod +x cm
-        ./cm selenoid start --browsers 'firefox:latest;chrome:latest' --vnc
+        ./cm selenoid start --browsers 'firefox;chrome;opera;android' --last-versions 1
         curl http://localhost:4444/status
 
     - name: Run tests Firefox
       run: |
-        pytest -rx --browser_name=firefox Tests/test_main.py
+        pytest --browser_name=firefox Tests/test_main.py
       continue-on-error: true
     
     - name: Run tests Chrome
       run: |
-        pytest -rx --browser_name=chrome Tests/test_main.py
-      
+        pytest --browser_name=chrome Tests/test_main.py
+      continue-on-error: true
+    
+    - name: Run tests Opera
+      run: |
+        pytest --browser_name=opera Tests/test_main.py
+      continue-on-error: true
+
+      - name: Run tests Android
+      run: |
+        pytest --browser_name=android Tests/test_main.py
+      continue-on-error: true
