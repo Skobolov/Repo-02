@@ -29,9 +29,13 @@ jobs:
       run: |
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
         chmod +x cm
-        ./cm selenoid start
+        ./cm selenoid start --browsers-json browsers.json
         curl http://localhost:4444/status
 
-    - name: Run tests
+    - name: Run tests Firefox
       run: |
-        pytest -s -v --browser_name=firefox Tests/test_main.py
+        pytest --browser_name=firefox Tests/test_main.py
+
+    - name: Run tests Chrome
+      run: |
+        pytest --browser_name=chrome Tests/test_main.py
