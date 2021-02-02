@@ -34,10 +34,10 @@ jobs:
 
     - name: Run tests Firefox
       run: |
-        pytest --browser_name=firefox Tests/test_main.py
+        pytest -x --browser_name=firefox Tests/test_main.py
       continue-on-error: true
     
     - name: Run tests Chrome
       run: |
-        pytest --browser_name=chrome Tests/test_main.py
+        pytest -x --browser_name=chrome Tests/test_main.py
       
