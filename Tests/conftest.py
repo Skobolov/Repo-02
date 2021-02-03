@@ -35,3 +35,28 @@ def browser(request):
     yield browser
     browser.quit()
 
+link = 'https://www.google.com/'
+
+def test_title_1(browser):
+    browser.get(link)
+    assert "Google" in browser.title
+
+def test_title_2(browser):
+    browser.get(link)
+    assert "Google" in browser.title
+
+def test_title_3(browser):
+    browser.get(link)
+    assert "Google" in browser.title
+
+def test_title_4(browser):
+    browser.get(link)
+    assert "Google" in browser.title
+
+def test_title_5(browser):
+    browser.get(link)
+    assert "Google" in browser.title
+
+def test_title_6(browser):
+    browser.get(link)
+    assert "Google" in browser.title
