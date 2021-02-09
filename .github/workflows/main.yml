@@ -34,7 +34,8 @@ jobs:
 
     - name: Run tests Firefox
       run: |
-        pytest --browser_name=firefox Tests/**
+        pytest --alluredir results --browser_name=firefox Tests/**
+        allure serve results
       continue-on-error: true
     
     - name: Run tests Chrome
