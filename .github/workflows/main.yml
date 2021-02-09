@@ -34,7 +34,7 @@ jobs:
 
     - name: Run tests Firefox
       run: |
-        pytest --alluredir results --browser_name=firefox Tests/**
+        pytest --alluredir allure-report --browser_name=firefox Tests/**
         
       continue-on-error: true
     
@@ -47,7 +47,7 @@ jobs:
       run: |
         pytest --browser_name=opera Tests/**
       continue-on-error: true
-      
+
     - name: Generate Allure report
       uses: simple-elf/allure-report-action@v1.3
       if: always()
