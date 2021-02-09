@@ -22,32 +22,27 @@ jobs:
 
     - name: Check code
       run: |
-        flake8 --exit-zero Tests/test_main.py
-        pylint --errors-only Tests/test_main.py
+        flake8 --exit-zero Tests/**
+        pylint --errors-only Tests/**
 
     - name: Start Selenoid
       run: |
         wget --no-check-certificate -O cm https://github.com/aerokube/cm/releases/latest/download/cm_linux_amd64
         chmod +x cm
-        ./cm selenoid start --browsers 'firefox;chrome;opera;android' --last-versions 1
+        ./cm selenoid start --browsers 'firefox;chrome;opera' --last-versions 1
         curl http://localhost:4444/status
 
     - name: Run tests Firefox
       run: |
-        pytest --browser_name=firefox Tests/test_main.py
+        pytest --browser_name=firefox Tests/**
       continue-on-error: true
     
     - name: Run tests Chrome
       run: |
-        pytest --browser_name=chrome Tests/test_main.py
+        pytest --browser_name=chrome Tests/**
       continue-on-error: true
     
     - name: Run tests Opera
       run: |
-        pytest --browser_name=opera Tests/test_main.py
-      continue-on-error: true
-
-    - name: Run tests Android
-      run: |
-        pytest --browser_name=android Tests/test_main.py
+        pytest --browser_name=opera Tests/**
       continue-on-error: true
