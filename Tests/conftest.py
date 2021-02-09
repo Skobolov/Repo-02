@@ -2,9 +2,11 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+
+
+
 def pytest_addoption(parser):
-    parser.addoption('--browser_name', action='store', default="chrome",
-                     help="Choose browser")
+    parser.addoption('--browser_name', action='store', default="chrome", help="Choose browser")
 
 @pytest.fixture(scope="function")
 def browser(request):
@@ -29,4 +31,3 @@ def browser(request):
         raise pytest.UsageError("--browser_name no specified ")
     yield browser
     browser.quit()
-
