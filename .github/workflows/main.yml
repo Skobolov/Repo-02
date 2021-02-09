@@ -34,7 +34,7 @@ jobs:
 
     - name: Run tests Firefox
       run: |
-        pytest --alluredir allure-report --browser_name=firefox Tests/**
+        pytest --alluredir allure-results --browser_name=firefox Tests/**
         
       continue-on-error: true
     
