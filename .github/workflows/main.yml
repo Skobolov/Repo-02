@@ -37,22 +37,14 @@ jobs:
         ./cm selenoid start --browsers 'firefox;chrome;opera' --last-versions 1
         curl http://localhost:4444/status
 
-    - name: Run tests Firefox
+    - name: Run tests 
       run: |
         pytest --alluredir allure-results --browser_name=firefox Tests/**
+        pytest --browser_name=chrome Tests/**
+        pytest --browser_name=opera Tests/**
         
       continue-on-error: true
     
-    - name: Run tests Chrome
-      run: |
-        pytest --browser_name=chrome Tests/**
-      continue-on-error: true
-    
-    - name: Run tests Opera
-      run: |
-        pytest --browser_name=opera Tests/**
-      continue-on-error: true
-
     - name: Generate Allure report
       uses: simple-elf/allure-report-action@v1.3
       if: always()      
