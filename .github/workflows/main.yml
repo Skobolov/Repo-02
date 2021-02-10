@@ -17,10 +17,6 @@ jobs:
         python -m pip install -U pip
         pip install -U pytest selenium flake8 pylint allure-pytest
 
-    - name: Set up JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
 
     - name: Check out and download repository
       uses: actions/checkout@v2
