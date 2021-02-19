@@ -3,15 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-
-
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome", help="Choose browser")
 
 @pytest.fixture(scope="function")
 def browser(request):
     browser_name = request.config.getoption("browser_name")
-
     if browser_name == "chrome":
         browser = webdriver.Remote(
         command_executor='http://localhost:4444/wd/hub',
