@@ -67,5 +67,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       if: always()
       with:
-        name: allure-results
-        path: ./allure-results
+        name: allure-report
+        path: ./allure-report
