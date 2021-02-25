@@ -40,7 +40,7 @@ jobs:
 
     - name: Run tests Firefox
       run: |
-        pytest --alluredir=allure-results --browser_name=firefox Tests/test_main.py
+        pytest --alluredir=allure --browser_name=firefox Tests/test_main.py
         
       continue-on-error: true
     
@@ -68,4 +68,4 @@ jobs:
       if: always()
       with:
         name: allure-report
-        path: ./allure-report ./allure-results
+        path: ./allure-report
