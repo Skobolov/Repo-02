@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Fri Feb 26 12:31:07 GMT 2021","Fri Feb 26 12:31:07 GMT 2021","756","Tests","test_main","","","","test_title_2",""
+"passed","Fri Feb 26 12:31:04 GMT 2021","Fri Feb 26 12:31:05 GMT 2021","760","Tests","test_main","","","","test_title_1",""

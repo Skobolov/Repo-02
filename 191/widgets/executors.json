@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://Skobolov.github.io/Repo-02",
+  "buildOrder" : 191,
+  "buildName" : "GitHub Actions Run #602716777",
+  "buildUrl" : "https://github.com/Skobolov/Repo-02/actions/runs/602716777",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://Skobolov.github.io/Repo-02/191/"
+} ]
