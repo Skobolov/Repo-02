@@ -50,7 +50,7 @@ jobs:
         pytest --alluredir=allure-results --browser_name=chrome Tests/**
       continue-on-error: true
     
-    - name: Generate Allure report
+    - name: Generate Allure report2
       uses: afiore/action-allure-report@v0.1.0
       if: always()
       id: allure-report
@@ -63,7 +63,7 @@ jobs:
         pytest --alluredir=allure-results --browser_name=opera Tests/**
       continue-on-error: true
       
-    - name: Generate Allure report
+    - name: Generate Allure report3
       uses: afiore/action-allure-report@v0.1.0
       if: always()
       id: allure-report
