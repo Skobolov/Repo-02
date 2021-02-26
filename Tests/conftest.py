@@ -25,38 +25,10 @@ def browser(request):
         command_executor='http://localhost:4444/wd/hub',
         desired_capabilities=DesiredCapabilities.OPERA
         )
-    elif browser_name == "android":
-        browser = webdriver.Remote(
-        command_executor='http://localhost:4444/wd/hub',
-        desired_capabilities=DesiredCapabilities.ANDROID
-        )
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser
     browser.quit()
 
-link = 'https://www.google.com/'
 
-def test_title_1(browser):
-    browser.get(link)
-    assert "Google" in browser.title
 
-def test_title_2(browser):
-    browser.get(link)
-    assert "Google" in browser.title
-
-def test_title_3(browser):
-    browser.get(link)
-    assert "Google" in browser.title
-
-def test_title_4(browser):
-    browser.get(link)
-    assert "Google" in browser.title
-
-def test_title_5(browser):
-    browser.get(link)
-    assert "Google" in browser.title
-
-def test_title_6(browser):
-    browser.get(link)
-    assert "Google" in browser.title
