@@ -36,21 +36,23 @@ jobs:
       run: |
         pytest --alluredir=allure-results --browser_name=firefox Tests/**
       continue-on-error: true
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: allure-results
+        path: ./allure-results
+      if-no-files-found : error
 
     - name: Run tests Chrome
       run: |
         pytest --alluredir=allure-results --browser_name=chrome Tests/**
-      continue-on-error: true
-    
-    - uses: actions/upload-artifact@v2
-      with:
-        name: allure-results
-        path: ./allure-results
+      continue-on-error: true    
 
     - uses: actions/upload-artifact@v2
       with:
         name: allure-results
         path: ./allure-results
+        if-no-files-found : error
 
     - name: Run tests Opera
       run: |
@@ -60,7 +62,8 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: allure-results
-        path: ./allure-results 
+        path: ./allure-results
+      if-no-files-found : error 
     
     - name: Generate Allure report3
       uses: afiore/action-allure-report@v0.1.0
